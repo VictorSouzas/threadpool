@@ -15,7 +15,7 @@ struct Queue
 };
 
 void enqueue(void *queue, int value);
-void dequeue(void *queue);
+void *dequeue(void *queue);
 int is_empty(void *queue);
 
 int main(int argc, char **argv)
@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 	enqueue(queue, 10);
 	enqueue(queue, 10);
 	/* code */
+	/* TODO: DEQUEUE AND FREE */
 	return 0;
 }
 
@@ -45,7 +46,7 @@ void enqueue(void *queue, int value)
 	new_queue->end = new_node;
 }
 
-void dequeue(void *queue)
+void *dequeue(void *queue)
 {
 	struct Queue *new_queue = (struct Queue*) queue;
 	struct Node *temp = (struct Node*) new_queue->start;
